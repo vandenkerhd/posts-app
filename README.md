@@ -104,99 +104,25 @@ DELETE  /posts/{post_id}    Elimina un post por ID
 
 ## Ejecución local
 
-### 1. Levantar la base de datos
+Para evitar duplicar instrucciones, este README solo muestra el orden recomendado de arranque.
+Los comandos detallados están documentados en cada módulo.
 
-Desde la raíz del proyecto:
+| Paso | Qué levantar | Instrucciones |
+|------|--------------|---------------|
+| 1 | PostgreSQL | [Levantar PostgreSQL](backend/README.md#levantar-postgresql) |
+| 2 | Backend FastAPI | [Instalación local](backend/README.md#instalación-local), [variables de entorno](backend/README.md#variables-de-entorno) y [ejecutar la API](backend/README.md#ejecutar-la-api) |
+| 3 | Frontend React | [Variables de entorno](frontend/README.md#variables-de-entorno), [instalación local](frontend/README.md#instalación-local) y [levantar el frontend](frontend/README.md#levantar-el-frontend) |
 
-```bash
-docker compose up -d postgres
-```
-
----
-
-### 2. Configurar y levantar el backend
-
-Crear el archivo de variables de entorno:
-
-```bash
-cp backend/.env.example backend/.env
-```
-
-En Windows PowerShell:
-
-```powershell
-copy backend\.env.example backend\.env
-```
-
-Instalar dependencias:
-
-```bash
-pip install -r backend/requirements.txt
-```
-
-Ejecutar la API:
-
-```bash
-fastapi dev backend/app/main.py
-```
-
-La API queda disponible normalmente en:
+URLs locales por defecto:
 
 ```txt
-http://localhost:8000
-```
-
----
-
-### 3. Configurar y levantar el frontend
-
-Desde la carpeta `frontend`, crear el archivo `.env`:
-
-```bash
-cp .env.example .env
-```
-
-En Windows PowerShell:
-
-```powershell
-copy .env.example .env
-```
-
-El archivo `.env` debe contener:
-
-```env
-VITE_API_URL=http://localhost:8000
-```
-
-Instalar dependencias:
-
-```bash
-pnpm install
-```
-
-Levantar Vite:
-
-```bash
-pnpm dev
-```
-
-El frontend queda disponible normalmente en:
-
-```txt
-http://localhost:5173
+Backend:  http://localhost:8000
+Frontend: http://localhost:5173
 ```
 
 ---
 
 ## Consideraciones de desarrollo
-
-Para ejecutar correctamente el proyecto, se recomienda levantar en el orden sugerido:
-
-```txt
-1. PostgreSQL
-2. Backend FastAPI
-3. Frontend React
-```
 
 Si el frontend no logra conectarse con el backend, revisar que:
 
@@ -219,4 +145,3 @@ En el frontend, se utiliza una estructura por `feature`, agrupando todo lo relac
 Esta organización permite que el proyecto sea más fácil de mantener, probar y extender.
 
 ---
-

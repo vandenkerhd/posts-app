@@ -51,6 +51,22 @@ backend/
 
 ---
 
+## Levantar PostgreSQL
+
+El proyecto utiliza Docker Compose para levantar la base de datos PostgreSQL:
+
+```bash
+docker compose up -d postgres
+```
+
+Para validar que el contenedor esté ejecutándose:
+
+```bash
+docker compose ps
+```
+
+---
+
 ## Instalación local
 
 Desde la raíz del proyecto, crear el entorno virtual:
@@ -104,23 +120,21 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/posts_db
 
 ---
 
-## Levantar PostgreSQL
-
-El proyecto utiliza Docker Compose para levantar la base de datos PostgreSQL:
-
-```bash
-docker compose up -d postgres
-```
-
-Para validar que el contenedor esté ejecutándose:
-
-```bash
-docker compose ps
-```
-
----
-
 ## Ejecutar la API
+
+Antes de ejecutar la API con el comando `fastapi`, validar que la CLI esté disponible:
+
+```bash
+fastapi --version
+```
+
+Si el comando no existe, instalar FastAPI con sus dependencias estándar:
+
+```bash
+pip install "fastapi[standard]"
+```
+
+> Al instalar desde `backend/requirements.txt`, esta dependencia ya queda cubierta.
 
 Desde la raíz del proyecto:
 
