@@ -1,0 +1,18 @@
+{
+  "packageManager": "pnpm@latest",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "latest",
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "sweetalert2": "latest"
+  },
+  "devDependencies": {}
+}
