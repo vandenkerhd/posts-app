@@ -59,18 +59,18 @@ Esta decisión evita llamadas innecesarias a la API y mejora el rendimiento de l
 
 ## Variables de entorno
 
-Antes de levantar el frontend, se debe crear el archivo `.env` a partir del archivo `.env.example`.
+Antes de levantar el frontend, se debe crear el archivo `frontend/.env` a partir del archivo `frontend/.env.example`.
 
-Desde la carpeta `frontend`:
+Desde la raíz del proyecto:
 
 ```bash
-cp .env.example .env
+cp frontend/.env.example frontend/.env
 ```
 
 En Windows PowerShell:
 
 ```powershell
-copy .env.example .env
+copy frontend\.env.example frontend\.env
 ```
 
 El archivo `.env` debe contener la URL base del backend:
@@ -107,7 +107,13 @@ Luego verificar la instalación:
 pnpm -v
 ```
 
-Desde la carpeta `frontend`, instalar las dependencias:
+Ingresar a la carpeta del frontend:
+
+```bash
+cd frontend
+```
+
+Instalar las dependencias:
 
 ```bash
 pnpm install
